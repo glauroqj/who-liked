@@ -14,6 +14,7 @@
     "eject": "inferno-scripts eject"
   },
   "devDependencies": {
+    "inferno-redux": "^3.10.1",
     "inferno-router": "^3.10.1"
   }
 }
