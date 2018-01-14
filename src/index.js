@@ -1,8 +1,10 @@
-import { render } from 'inferno';
+import Inferno from 'inferno';
 import { Provider } from 'inferno-redux';
 import { createStore } from 'redux';
 import App from './App';
 import './assets/main.css';
+
+require('inferno-devtools');
 
 const store = createStore(function(state, action) {
   switch (action.type) {
@@ -17,7 +19,7 @@ const store = createStore(function(state, action) {
   }
 })
 
-render(
+Inferno.render(
     <Provider store={ store }>
         <App />
     </Provider>

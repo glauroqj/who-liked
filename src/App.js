@@ -1,4 +1,4 @@
-import { version } from 'inferno';
+import Inferno from 'inferno';
 import Component from 'inferno-component';
 import './registerServiceWorker';
 import Logo from './logo';

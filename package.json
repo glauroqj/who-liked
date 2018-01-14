@@ -5,6 +5,7 @@
   "dependencies": {
     "inferno": "^3.10.1",
     "inferno-component": "^3.10.1",
+    "inferno-devtools": "^3.10.1",
     "inferno-scripts": "5.0.0"
   },
   "scripts": {

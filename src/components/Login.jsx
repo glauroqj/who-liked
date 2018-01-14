@@ -1,4 +1,4 @@
-import { render } from 'inferno';
+import Inferno from 'inferno';
 import Component from 'inferno-component';
 
 class Login extends Component {
