@@ -4,20 +4,12 @@ import { createStore } from 'redux';
 import App from './App';
 import './assets/main.css';
 
-require('inferno-devtools');
+/* store */
+import Home from './reducers/Home.js'
 
-const store = createStore(function(state, action) {
-  switch (action.type) {
-    case 'CHANGE_NAME':    
-      return {
-        name: action.name
-      }
-    default:
-      return {
-        name: 'TOM'
-      };
-  }
-})
+const store = createStore(function(Home){});
+
+require('inferno-devtools');
 
 Inferno.render(
     <Provider store={ store }>
