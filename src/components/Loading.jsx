@@ -12,7 +12,9 @@ class Loading extends Component {
   render() {
     return (
     	<div>
-    		<span><i class="fa fa-refresh fa-spin fa-lg fa-fw"></i> Carregando...</span>
+    		<span class="d-flex flex-row justify-content-center p-3">
+          <i class="fa fa-refresh fa-spin fa-lg fa-fw"></i> Carregando...
+        </span>
     	</div>
     );
   }

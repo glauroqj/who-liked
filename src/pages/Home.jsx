@@ -19,12 +19,12 @@ class Home extends Component {
 	render() {
 		return (
 			<div>
-			<Loading></Loading>
-			<Navbar></Navbar>
-			<Login></Login>
-			<List></List>
+				<Loading></Loading>
+				<Navbar></Navbar>
+				<Login></Login>
+				<List></List>
 			</div>
-			);
+		);
 	}
 }
 
