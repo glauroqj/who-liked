@@ -10,19 +10,32 @@ class Home extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			loading: true,
-			navbar: false,
-			login: false,
-			list: false
+			loading: true
 		}
 	}
+
+	componentWillUpdate() {
+		if(this.state.loading) {
+			return [<Loading></Loading>]
+		} else {
+			return [<Navbar></Navbar>, <Login></Login>]
+		}
+	}
+
+	componentDidMount() {
+		var vm = this;
+		setTimeout(function() {
+			vm.setState({
+				loading: false
+			});
+			console.log('CARREGOu')
+		}, 1500);
+	}
+
 	render() {
 		return (
 			<div>
-				<Loading></Loading>
-				<Navbar></Navbar>
-				<Login></Login>
-				<List></List>
+				{this.componentWillUpdate()}
 			</div>
 		);
 	}
