@@ -3,7 +3,6 @@ import Component from 'inferno-component';
 
 import Loading from '../components/Loading.jsx'
 import Navbar from '../components/Navbar.jsx';
-import Login from '../components/Login.jsx';
 import List from '../components/List.jsx'
 
 class Home extends Component {
@@ -18,7 +17,7 @@ class Home extends Component {
 		if(this.state.loading) {
 			return [<Loading></Loading>]
 		} else {
-			return [<Navbar></Navbar>, <Login></Login>]
+			return [<Navbar></Navbar>, <List></List>]
 		}
 	}
 
