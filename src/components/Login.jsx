@@ -1,30 +1,53 @@
 import Inferno from 'inferno';
 import Component from 'inferno-component';
 
+import { auth } from '../auth.js'
+
 class Login extends Component {
     constructor(props) {
 	    super(props);
-	    this.clickMe = ''
+	    this.state = {
+	    	clientID: '',
+	    	redirectURI: '',
+	    	authData: false
+	    }
     }
-	clickMe() {
-	    console.log('HIDE ALL')
+
+	loginInstagram() {
+		var vm = this;
+	    console.log()
+
+	    if( auth != '' && auth != undefined ) {
+	    	window.location.href = '//api.instagram.com/oauth/authorize/?client_id='+auth.clientID+'&redirect_uri='+auth.redirectURI+'&response_type=token';
+		}
+	}
+
+	componentDidMount() {
+		var vm = this;		
+		if( auth != '' && auth != undefined ) {
+			vm.setState({
+				clientID: auth.clientID,
+				redirectURI: auth.redirectURI,
+				authData: true
+			});
+		}
 	}
 
 	render() {
 	    return (
 	    	<div>
-		    	<div class="container">
-			    	<div class="d-flex flex-row justify-content-center">
-						<div class="card border-secondary mb-3 mt-3">
-						  <div class="card-body text-secondary">
-						    <h4 class="card-title">Saiba quem curtiu suas fotos!</h4>
+		    	<div className="container">
+			    	<div className="d-flex flex-row justify-content-center">
+						<div className="card border-secondary mb-3 mt-3">
+						  <div className="card-body text-secondary">
+						    <h4 className="card-title">Saiba quem curtiu suas fotos!</h4>
 						  </div>
 						</div>
 			    	</div>
-			    	<div class="d-flex flex-row justify-content-center">
-			    		<div class="w-50">
-				    		<button type="button" class="btn btn-primary btn-lg btn-block" onClick={ this.clickMe }>
-								<i class="fa fa-instagram" aria-hidden="true"></i> Login Instagram
+			    	<div className="d-flex flex-row justify-content-center">
+			    		<div className="w-50">
+				    		<button type="button" className="btn btn-primary btn-lg btn-block" onClick={ this.loginInstagram }>
+								<i className="fa fa-instagram" aria-hidden="true"></i> Login Instagram
 				    		</button>
 				    	</div>	
 			    	</div>
