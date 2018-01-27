@@ -15,11 +15,14 @@ class Login extends Component {
 
 	loginInstagram() {
 		var vm = this;
-	    console.log()
-
+	    if( this.state.clientID != '' ) {
+	    	console.log('USER LOGGED')
+	    }
+/*
 	    if( auth != '' && auth != undefined ) {
 	    	window.location.href = '//api.instagram.com/oauth/authorize/?client_id='+auth.clientID+'&redirect_uri='+auth.redirectURI+'&response_type=token';
 		}
+		*/
 	}
 
 	componentDidMount() {
