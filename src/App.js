@@ -3,7 +3,6 @@ import Component from 'inferno-component';
 import './registerServiceWorker';
 
 import Home from './pages/Home';
-import List from './pages/List';
 
 import { Router, Route, IndexRoute } from 'inferno-router';
 import createBrowserHistory from 'history/createBrowserHistory';
@@ -13,7 +12,7 @@ const routes = (
   <Router history={ browserHistory }>
     <Route component={ App }>
       <IndexRoute component={ Home }/>
-      <Route path="/list" component={ List }></Route>
+      {/* <Route path="/list" component={ Dashboard }></Route> */}
     </Route>
   </Router>
 );

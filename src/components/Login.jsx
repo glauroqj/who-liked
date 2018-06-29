@@ -12,7 +12,7 @@ class Login extends Component {
 		}
 		
 	componentWillMount() {
-		if(auth != undefined) {
+		if(auth !== undefined) {
 			this.setState({
 				clientID: auth.clientID,
 				redirectURI: auth.redirectURI,
@@ -22,7 +22,7 @@ class Login extends Component {
 	}
 
 	loginInstagram() {
-		if( auth != '' && auth != undefined ) {
+		if( auth !== '' && auth !== undefined ) {
 			window.location.href = '//api.instagram.com/oauth/authorize/?client_id='+auth.clientID+'&redirect_uri='+auth.redirectURI+'&response_type=token';
 		}
 
@@ -33,7 +33,6 @@ class Login extends Component {
 	}
 
 	render() {
-		console.log('STATE: ', this.state)
 	    return (
 	    	<div>
 		    	<div className="container">
