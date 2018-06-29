@@ -30,7 +30,7 @@ class Home extends Component {
 				dashboard: true,
 				login: false,
 				token: token[1],
-				user: userInfo
+				user: userInfo.data.data
 			});
 		}
 		
@@ -65,7 +65,7 @@ class Home extends Component {
 				[<Navbar/>,<Login/>]
 			}
 			{(!this.state.loading && this.state.dashboard) &&
-				[<Navbar/>,<List/>]
+				[<Navbar user={this.state.user}/>,<List/>]
 			}
 			</div>
 		);
