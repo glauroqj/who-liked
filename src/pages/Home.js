@@ -1,7 +1,7 @@
-import { render } from 'inferno';
-import Component from 'inferno-component';
+import React, { Component } from 'react';
 import axios from 'axios'
 
+import {auth} from '../auth'
 import Loading from '../components/Loading.jsx'
 import Navbar from '../components/Navbar.jsx';
 import Login from '../components/Login.jsx';
@@ -22,7 +22,6 @@ class Home extends Component {
 		let vm = this;
 		let token = window.location.hash.split('#');
 		let verify = window.location.hash.split('=');
-		
 		if(verify[0] === '#access_token') {
 			/* if has hash show the dashboard */
 			let userInfo = await this.getUserInfo(token[1]);
@@ -54,6 +53,13 @@ class Home extends Component {
 			return err
 		})
 	}
+
+	loginInstagram() {
+		console.log('call API')
+		// if( auth !== '' && auth !== undefined ) {
+		// 	window.location.href = '//api.instagram.com/oauth/authorize/?client_id='+auth.clientID+'&redirect_uri='+auth.redirectURI+'&response_type=token';
+		// }
+	}
 	
 	render() {
 		return (
@@ -62,7 +68,7 @@ class Home extends Component {
 				<Loading/>
 			}
 			{(!this.state.loading && this.state.login) &&
-				[<Navbar/>,<Login/>]
+				[<Navbar/>,<Login callLogin={this.loginInstagram.bind(this)}/>]
 			}
 			{(!this.state.loading && this.state.dashboard) &&
 				[<Navbar user={this.state.user}/>,<List/>]

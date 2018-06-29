@@ -1,6 +1,3 @@
-## Learning InfernoJS
+# Who Liked?
 
-This project was bootstrapped with [Create Inferno App](https://github.com/infernojs/create-inferno-app).
-
-  - `npm start`
-  - `npm run build`
+- Simple app to test public Instagram API

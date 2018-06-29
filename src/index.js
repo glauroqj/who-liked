@@ -1,18 +1,14 @@
-import Inferno from 'inferno';
-import { Provider } from 'inferno-redux';
-import { createStore } from 'redux';
+import React from 'react';
+import { render } from 'react-dom';
+import './index.css';
 import App from './App';
-import './assets/main.css';
+import registerServiceWorker from './registerServiceWorker';
+import { BrowserRouter as Router, Route, Link } from 'react-router';
+import { BrowserRouter } from 'react-router-dom'
 
-/* store */
-// import storage from './store/store'
-// const store = createStore(storage);
-
-require('inferno-devtools');
-
-Inferno.render(
-    <Provider>
-        <App />
-    </Provider>
-    , document.getElementById('app')
- );
+render(
+  <BrowserRouter>
+    <App />
+  </BrowserRouter>
+, document.getElementById('root'));
+registerServiceWorker();

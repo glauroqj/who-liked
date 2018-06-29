@@ -4,19 +4,16 @@
   "private": true,
   "dependencies": {
     "axios": "^0.18.0",
-    "inferno": "^3.10.1",
-    "inferno-component": "^3.10.1",
-    "inferno-devtools": "^3.10.1",
-    "inferno-scripts": "5.0.0"
+    "react": "^16.4.1",
+    "react-dom": "^16.4.1",
+    "react-router": "^4.3.1",
+    "react-router-dom": "^4.3.1",
+    "react-scripts": "1.1.4"
   },
   "scripts": {
-    "start": "inferno-scripts start",
-    "build": "inferno-scripts build",
-    "test": "inferno-scripts test --env=jsdom",
-    "eject": "inferno-scripts eject"
-  },
-  "devDependencies": {
-    "inferno-redux": "^3.10.1",
-    "inferno-router": "^3.10.1"
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
   }
 }
