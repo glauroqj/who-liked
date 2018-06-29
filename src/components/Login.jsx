@@ -1,6 +1,4 @@
-import Inferno from 'inferno';
 import Component from 'inferno-component';
-
 import { auth } from '../auth.js'
 
 class Login extends Component {
@@ -11,24 +9,11 @@ class Login extends Component {
 	    	redirectURI: '',
 	    	authData: false
 	    }
-    }
-
-	loginInstagram() {
-		var vm = this;
-	    if( this.state.clientID != '' ) {
-	    	console.log('USER LOGGED')
-	    }
-/*
-	    if( auth != '' && auth != undefined ) {
-	    	window.location.href = '//api.instagram.com/oauth/authorize/?client_id='+auth.clientID+'&redirect_uri='+auth.redirectURI+'&response_type=token';
 		}
-		*/
-	}
-
-	componentDidMount() {
-		var vm = this;		
-		if( auth != '' && auth != undefined ) {
-			vm.setState({
+		
+	componentWillMount() {
+		if(auth != undefined) {
+			this.setState({
 				clientID: auth.clientID,
 				redirectURI: auth.redirectURI,
 				authData: true
@@ -36,7 +21,19 @@ class Login extends Component {
 		}
 	}
 
+	loginInstagram() {
+		if( auth != '' && auth != undefined ) {
+			window.location.href = '//api.instagram.com/oauth/authorize/?client_id='+auth.clientID+'&redirect_uri='+auth.redirectURI+'&response_type=token';
+		}
+
+	}
+
+	componentDidMount() {		
+
+	}
+
 	render() {
+		console.log('STATE: ', this.state)
 	    return (
 	    	<div>
 		    	<div className="container">

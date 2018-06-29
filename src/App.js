@@ -1,7 +1,6 @@
 import Inferno from 'inferno';
 import Component from 'inferno-component';
 import './registerServiceWorker';
-import Logo from './logo';
 
 import Home from './pages/Home';
 import List from './pages/List';

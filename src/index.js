@@ -5,14 +5,13 @@ import App from './App';
 import './assets/main.css';
 
 /* store */
-import Home from './reducers/Home.js'
-
-const store = createStore(function(Home){});
+// import storage from './store/store'
+// const store = createStore(storage);
 
 require('inferno-devtools');
 
 Inferno.render(
-    <Provider store={ store }>
+    <Provider>
         <App />
     </Provider>
     , document.getElementById('app')

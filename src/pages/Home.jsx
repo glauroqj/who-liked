@@ -14,14 +14,6 @@ class Home extends Component {
 		}
 	}
 
-	componentWillUpdate() {
-		if(this.state.loading) {
-			return [<Loading></Loading>]
-		} else {
-			return [<Navbar></Navbar>, <Login></Login>]
-		}
-	}
-
 	componentDidMount() {
 		var vm = this;
 		setTimeout(function() {
@@ -34,7 +26,12 @@ class Home extends Component {
 	render() {
 		return (
 			<div>
-				{this.componentWillUpdate()}
+				{this.state.loading &&
+					<Loading/>
+				}
+				{!this.state.loading &&
+					[<Navbar/>,<Login/>]
+				}
 			</div>
 		);
 	}
