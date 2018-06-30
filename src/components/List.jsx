@@ -47,17 +47,19 @@ class List extends Component {
 															<li className="list-group-item">{key.location.name}</li>
 														}
 													</ul>
-													<div className="card-footer text-muted">
-														Users in photo:
-														{key.users_in_photo.map((key, i) => {
-															return (
-																<React.Fragment key={i}>
-																	<div>{key.user.username} </div>
-																</React.Fragment>
-															)
-															})
-														}
-													</div>
+													{key.users_in_photo != '' &&
+														<div className="card-footer text-muted">
+															Users in photo:
+															{key.users_in_photo.map((key, i) => {
+																return (
+																	<React.Fragment key={i}>
+																		<div>{key.user.username} </div>
+																	</React.Fragment>
+																)
+																})
+															}
+														</div>
+													}
 												</div>
 											</li>
 										</React.Fragment>
