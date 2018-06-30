@@ -4,12 +4,12 @@ class Login extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
+			teste: 'OLAR'
 		}
 	}
 
 	call() {
-		console.log('PROPS: ', this.props)
-		// return props.callLogin()
+		return this.props.callLogin()
 	}
 
 	render() {
@@ -25,7 +25,7 @@ class Login extends Component {
 			    	</div>
 			    	<div className="d-flex flex-row justify-content-center">
 			    		<div className="w-50">
-				    		<button type="button" className="btn btn-primary btn-lg btn-block" onClick={ this.call }>
+				    		<button type="button" className="btn btn-primary btn-lg btn-block" onClick={ this.call.bind(this) }>
 								<i className="fa fa-instagram" aria-hidden="true"></i> Login Instagram
 				    		</button>
 				    	</div>	

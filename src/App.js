@@ -57,10 +57,9 @@ class App extends Component {
 	}
 
 	loginInstagram() {
-		console.log('call API')
-		// if( auth !== '' && auth !== undefined ) {
-		// 	window.location.href = '//api.instagram.com/oauth/authorize/?client_id='+auth.clientID+'&redirect_uri='+auth.redirectURI+'&response_type=token';
-		// }
+		if( auth !== '' && auth !== undefined ) {
+			window.location.href = '//api.instagram.com/oauth/authorize/?client_id='+auth.clientID+'&redirect_uri='+auth.redirectURI+'&response_type=token';
+		}
 	}
 	
 	render() {
